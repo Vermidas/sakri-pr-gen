@@ -1,5 +1,5 @@
 // ==UserScript==
-// @name         Massenprägen(coin gruppe)
+// @name         Sakri-Prägen(coin gruppe)
 
 // @include      **&screen=snob&*group=*
 // @include      https://*.die-staemme.de/game.php?village=*&screen=snob&mode=coin&group=64673
@@ -7,7 +7,7 @@
 // @version      0.11
 // ==/UserScript==
 
-var urlgithub = 'https://raw.githubusercontent.com/Vermidas/sakri-pr-gen/main/Lizenz.txt';
+var urlgithub = 'https://raw.githack.com/Vermidas/sakri-pr-gen/main/Lizenz.txt';
 var userName = game_data.player.name;
 
 fetch(urlgithub)
