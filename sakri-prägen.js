@@ -7,7 +7,7 @@
 // @version      0.11
 // ==/UserScript==
 
-var urlgithub = 'https://raw.githack.com/Vermidas/sakri-pr-gen/main/Lizenz.txt';
+var urlgithub = 'https://raw.githubusercontent.com/Vermidas/sakri-pr-gen/main/Lizenz.txt';
 var userName = game_data.player.name;
 
 fetch(urlgithub)
