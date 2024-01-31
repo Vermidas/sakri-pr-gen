@@ -405,7 +405,7 @@ document.getElementById('löschenButton').addEventListener('click', function() {
   // Durchlaufen aller Schlüssel im localStorage
   Object.keys(localStorage).forEach(function(key) {
     // Überprüfen, ob der Schlüssel die Zeichenfolge "prägen" enthält
-    if (key.includes('präge')) {
+    if (key.includes('präge')|| ('CurrentCountdown')) {
       // Löschen des Schlüssels, wenn er "prägen" enthält
       localStorage.removeItem(key);
       location.reload();
