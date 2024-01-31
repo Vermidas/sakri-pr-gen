@@ -405,7 +405,7 @@ document.getElementById('löschenButton').addEventListener('click', function() {
   // Durchlaufen aller Schlüssel im localStorage
   Object.keys(localStorage).forEach(function(key) {
     // Überprüfen, ob der Schlüssel die Zeichenfolge "prägen" enthält
-    if (key.includes('präge')|| ('CurrentCountdown')) {
+    if (key.includes('präge')) {
       // Löschen des Schlüssels, wenn er "prägen" enthält
       localStorage.removeItem(key);
       location.reload();
@@ -573,19 +573,19 @@ function startCountdown() {
     return;
   }
 
-  let time = parseInt(localStorage.getItem('CurrentCountdown')) || parseInt(localStorage.getItem('prägeAnfordern')) || 0;
+  let time = parseInt(localStorage.getItem('prägeCurrentCountdown')) || parseInt(localStorage.getItem('prägeAnfordern')) || 0;
   updateCountdownDisplay(time);
 
   const countdownInterval = setInterval(() => {
     time--;
-    localStorage.setItem('CurrentCountdown', time.toString());
+    localStorage.setItem('CprägeurrentCountdown', time.toString());
     updateCountdownDisplay(time);
 
     if (time <= 0) {
       console.log("Countdown hat 0 erreicht. Neustart des Countdowns.");
       executeCodeForAllLinks();
       clearInterval(countdownInterval);
-      localStorage.removeItem('CurrentCountdown');
+      localStorage.removeItem('prägeCurrentCountdown');
       startCountdown();
     }
   }, 1000);
