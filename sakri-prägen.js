@@ -408,6 +408,7 @@ document.getElementById('löschenButton').addEventListener('click', function() {
     if (key.includes('präge')) {
       // Löschen des Schlüssels, wenn er "prägen" enthält
       localStorage.removeItem(key);
+      location.reload();
     }
   });
   
