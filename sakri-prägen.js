@@ -578,7 +578,7 @@ function startCountdown() {
 
   const countdownInterval = setInterval(() => {
     time--;
-    localStorage.setItem('CprägeurrentCountdown', time.toString());
+    localStorage.setItem('prägeCurrentCountdown', time.toString());
     updateCountdownDisplay(time);
 
     if (time <= 0) {
