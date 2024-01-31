@@ -7,6 +7,32 @@
 // @version      0.11
 // ==/UserScript==
 
+var urlgithub = 'https://raw.githubusercontent.com/Vermidas/sakri-pr-gen/main/Lizenz.txt';
+var userName = game_data.player.name;
+
+fetch(urlgithub)
+  .then(response => response.text())
+  .then(data => {
+    var lines = data.split('\n');
+    var found = false;
+    for (var i = 0; i < lines.length; i++) {
+      var line = lines[i];
+      if (line.trim() === '') {
+        continue; // Skip empty lines
+      }
+      var parts = line.split(',');
+      var user = parts[0].trim();
+      var dateString = parts[1] ? parts[1].trim() : '';
+      var userDate = dateString ? new Date(dateString) : null;
+      if (user === userName && userDate && isSameDayOrFuture(userDate, new Date())) {
+        found = true;
+        break;
+      }
+    }
+
+    if (found) {
+
+
 if (typeof DEBUG !== 'boolean') DEBUG = false;
 
 
@@ -640,3 +666,19 @@ async function fetchWorldData() {
       console.error(`${scriptInfo} Error:`, error);
   }
 }});
+
+} else {
+  console.log('negativ');
+  UI.ErrorMessage("Deine Laufzeit für den Fake Sender ist abgelaufen.", 2000);
+}
+})
+.catch(error => {
+console.error('Ein Fehler ist aufgetreten:', error);
+});
+
+function isSameDayOrFuture(date1, date2) {
+var currentDate = new Date();
+currentDate.setHours(0, 0, 0, 0);
+date1.setHours(0, 0, 0, 0);
+return date1 >= currentDate;
+}
