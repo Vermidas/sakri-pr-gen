@@ -269,12 +269,17 @@ if (window.location.href.includes('snob')){
     .info-icon {
       color: red;
     }
+
+    .forum-content {
+      width: 50%
+    }
     
 
     `;
     const tableHTML = `
     <style>${customStyle}</style>
-    <table id="praegeTable" class="vis overview_table">
+    <div class="forum-content" style="padding: 0;">
+    <table id="praegeTable" class="vis nowrap">
       <thead>
         <tr>
           <th colspan="2" style="text-align: center; position: relative;">
@@ -327,6 +332,7 @@ if (window.location.href.includes('snob')){
         </tr>
       </tbody>
     </table>
+    </div>
   `;
 
 visItem.insertAdjacentHTML('beforebegin', tableHTML);
